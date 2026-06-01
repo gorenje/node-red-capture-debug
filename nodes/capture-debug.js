@@ -5,7 +5,7 @@ module.exports = function(RED) {
     var node = this;
     var cfg = config;
 
-    require("@node-red/util").events.on('comms', (msg) => { 
+    var handler = (msg) => {
       if (msg.topic != "debug") { return }
       
       if (!msg.data || typeof msg.data != "object") { return }
@@ -25,10 +25,12 @@ module.exports = function(RED) {
           debug: msg.data
         })
       }
-    })
+    }
+
+    require("@node-red/util").events.on('comms', handler)
 
     node.on('close', function() {
-      node.status({});
+      require("@node-red/util").events.off("comms", handler)
     });
   }
   RED.nodes.registerType("capture-debug", Corecapture_debugFunctionality);
