@@ -1,0 +1,34 @@
+{
+  "name" : "@gregoriusrippenstein/node-red-capture-debug",
+  "version": "0.0.1",
+  "dependencies": {
+    "is-utf8": "0.2.1"
+  },
+
+  "description": "Capture debug messages that go to the debug panel",
+  "keywords": [
+    "node-red"
+  ],
+
+  "license": "Don't do evil.",
+  "homepage": "https://github.com/gorenje/node-red-capture-debug#readme",
+  "author": "Gerrit Riessen <gerrit@openmindmap.org>",
+  "engines": {
+    "node": ">=14"
+  },
+
+  "node-red" : {
+    "version": ">=3.0.0",
+    "nodes": {
+      "capture-debug": "nodes/capture-debug.js"
+    }    
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorenje/node-red-capture-debug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gorenje/node-red-capture-debug"
+  }
+}
